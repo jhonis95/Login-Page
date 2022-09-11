@@ -8,20 +8,16 @@
 </head>
 <body>
     <?php
-        // require_once 'conections.php';
-        $conn =new mysqli('localhost','jonatan','0000','logging_users');
-        if($conn -> connect_errno){
-            echo "Failed to connect to MySQL: " . $conn -> connect_error;
-            exit();
-        }
+        require_once 'conections.php';
     ?>
     <section class="loggin">
         <h1 class="title">Login project</h1>
-        <form action="" class="form">
-            <input type="text" name="" id="" class="user-name" placeholder="user">
-            <input type="password" name="" id="" class="password" placeholder="password">
-            <input type="submit" value="sing in">
+        <form action="login.php" method="post" class="form">
+            <input type="text" name="user" id="user" class="user-name" placeholder="user">
+            <input type="password" name="password" id="password" class="password" placeholder="password">
+            <input type="submit" class="submit-btn" value="sing in">
         </form>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
