@@ -9,10 +9,14 @@
 <body>
     <?php
         // require_once 'conections.php';
-        $conn =mysqli_connect('localhost','jonatan','0000','logging_user')or die(mysqli_error());
+        $conn =new mysqli('localhost','jonatan','0000','logging_users');
+        if($conn -> connect_errno){
+            echo "Failed to connect to MySQL: " . $conn -> connect_error;
+            exit();
+        }
     ?>
     <section class="loggin">
-        <h1 class="title">Loggin project</h1>
+        <h1 class="title">Login project</h1>
         <form action="" class="form">
             <input type="text" name="" id="" class="user-name" placeholder="user">
             <input type="password" name="" id="" class="password" placeholder="password">
