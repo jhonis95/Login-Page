@@ -1,6 +1,6 @@
 <?php
     //iniciando sessão
-    session_start(); 
+    session_start();
     //adicionar as variaves de conexão
     include('conections.php');
     //verificação se os campos estão vazios
