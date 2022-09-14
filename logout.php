@@ -3,5 +3,7 @@ session_start();
 session_destroy();
 
 //erro nao esta indo ara index
-header('Location : index.php');
+// ob_start();
+// header('Location : index.php');
+// ob_end_flush();
 exit();
