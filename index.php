@@ -17,9 +17,9 @@
             <form action="login.php" method="post" class="form">
                 <input type="text" name="user" id="user" class="user-name" placeholder="user">
                 <input type="password" name="password" id="password" class="password" placeholder="password">
-                <input type="submit" class="submit-btn" value="sing in">
+                <input type="submit" class="submit-btn" value="sign in">
             </form>
-            <h3>don't have a account yet?? <span><a href="register.php">sign in</a></span></h3>
+            <h3>don't have a account yet?? <span><a href="register.php">sign up</a></span></h3>
         </section>
     </main>
     <script src="script.js"></script>

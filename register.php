@@ -16,6 +16,9 @@
                 <input type="password" name="" id="" placeholder="password">
                 <button type="submit">save</button>
             </form>
+            <h3>
+                Back to <spam><a href="index.php">sing in</a></spam>
+            </h3>
         </section>
     </main>
     <script src="script.js"></script>
