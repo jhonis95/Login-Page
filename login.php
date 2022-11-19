@@ -27,7 +27,8 @@
         header('Location: AppUser.php');//indo para o app
         exit();
     }else {
-        header('Location: index.php');//voltando para a tela de login
+        echo "erro de dados";
+        //header('Location: index.php');//voltando para a tela de login
         exit();
     }
 ?>

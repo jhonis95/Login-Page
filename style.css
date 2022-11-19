@@ -24,3 +24,7 @@ body{
     height: 150px;
     justify-content: space-evenly;
 }
+.errorMessenge{
+    color: red;
+    font-weight: bold;
+}

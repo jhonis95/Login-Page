@@ -14,5 +14,6 @@
 <body>
     <h1>app wellcome <?php echo $_SESSION['user'] ?></h1>
     <button id="logout-btn">Logout</button>
+    <script src="app.js"></script>
 </body>
 </html>
