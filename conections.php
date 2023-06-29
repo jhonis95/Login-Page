@@ -4,6 +4,6 @@ $conn =new mysqli('localhost','jonatan','0000','logging_users');
         echo "Failed to connect to MySQL: ";
         exit();
     }else{
-        echo "connected with data base";
+        echo "connected with data base". "<br>";
     }
 ?>
