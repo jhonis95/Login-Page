@@ -1,7 +1,9 @@
 <?php
     //iniciando sessão
     session_start();
-    include('verification.php')    
+    include('verification.php')   
+    // include('login.php');
+    // echo $_SESSION;
 ?>
 <!DOCTYPE html>
 <html lang="en">
