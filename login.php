@@ -3,23 +3,26 @@
     // session_start();
     //adicionar as variaves de conexão
     include('conections.php');
-    //verificação se os campos estão vazios
-    // var_dump($_SERVER["REQUEST_URI"]) . "<br>";
-    echo var_dump($_REQUEST);
-    // echo var_dump($_POST);
 
-    if(isset($_REQUEST)){
-        echo $_REQUEST["user"];
-        echo $_REQUEST["password"];
-    } 
-    if(empty($_REQUEST['user'])||empty($_REQUEST['password'])){
-        header('Location: index.php');
-        echo "user or password is missing";
-        exit();
-    }
-    //prevenir slq injection
-    $user=mysqli_real_escape_string($conn,$_REQUEST['user']);
-    $password=mysqli_real_escape_string($conn,$_REQUEST['password']);
+    $data=file_get_contents('php://input');
+    $_POST=json_decode($data);
+
+    $resUser=$_POST->user;
+    $resPassword=$_POST->password;
+    // prevenir slq injection
+    $user=mysqli_real_escape_string($conn,$resUser);
+    $password=mysqli_real_escape_string($conn,$resPassword);
+    
+    //to check the response
+    // $mess= array(
+    //     'reques'=>$_REQUEST,
+    //     'post'=>$_POST,
+    //     // // 'server'=>$_SERVER,
+    //     // 'data'=>$data,
+    //     'sqlUser'=>$user,
+    //     'sqlPassword'=>$password
+    // );
+    // echo json_encode($mess);
 
     //montar a query para vereficação no banco de dados
     $sql="select * from users where user='{$user}' and password='{$password}'";
@@ -33,12 +36,19 @@
     //vereficando se a row existe
     if($row==1){//se existe
         $_SESSION['user']=$user;//criando a sessão do usuario
-        header('Location: AppUser.php');//indo para o app
-        print "session create";
+        // header('Location: AppUser.php');//indo para o app
+        $page= array(
+            'location'=>'AppUser.php',
+            'session'=>$_SESSION
+        );
+        echo json_encode($page);
         exit();
     }else {
-        print "erro de dados";
-        header('Location: index.php');//voltando para a tela de login
+        $mess= array(
+            'messenge'=>'Deu Ruim'
+        );
+        echo json_encode($mess);
+        // header('Location: index.php');//voltando para a tela de login
         exit();
     }
 ?>

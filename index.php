@@ -8,9 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        require_once 'conections.php';
-    ?>
     <main class="app">
         <section class="form-container">
         <h1 class="title">Login project</h1>
