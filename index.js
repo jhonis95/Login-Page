@@ -16,7 +16,7 @@ submitBTN.addEventListener("click",(evt)=>{
             let data={user:inputUser.value, password:inputPassword.value}
 
             let myInit = { 
-                "method": 'POST',
+                "method": 'GET',
                 "headers": {
                     "Content-Type": "application/json; charset=utf-8"
                  },
